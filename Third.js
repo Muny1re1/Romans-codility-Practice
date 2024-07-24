@@ -159,8 +159,8 @@ function algorithm(S){
 };
 
 // tests
-algorithm("4 5 6 - 7 + DUP");
-algorithm("13 DUP 4 POP 5 DUP + DUP + -");
-algorithm("5 6 + -");
-algorithm("3 DUP 5 - -");
-algorithm("1048575 DUP +");
+algorithm("4 5 6 - 7 +"); // outputs 8
+algorithm("13 DUP 4 POP 5 DUP + DUP + -"); // outputs 7
+algorithm("5 6 + -"); //outputs -1
+algorithm("3 DUP 5 - -"); //outputs -1
+algorithm("1048575 DUP +"); //outputs -1
