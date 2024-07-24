@@ -22,3 +22,33 @@
 
 // N is an integer within the range [1..100,000];
 // each element of array A is an integer within the range [1..100,000].
+
+function solution(A) {
+    // Sort the preferences in ascending order
+    A.sort((a, b) => a - b);
+
+    let rooms = 0;
+    let i = 0;
+    
+    while (i < A.length) {
+        let maxGuests = A[i];
+        let count = 0;
+        
+        // Try to fill the current room with as many guests as allowed
+        while (i < A.length && count < maxGuests) {
+            count++;
+            i++;
+        }
+        
+        rooms++;
+    }
+    
+    return rooms;
+}
+
+// Examples
+console.log(solution([1, 1, 1, 1, 1])); // Should return 5
+console.log(solution([2, 1, 4])); // Should return 2
+console.log(solution([2, 7, 2, 9, 8])); // Should return 2
+console.log(solution([7, 3, 1, 1, 4, 5, 4, 9])); // Should return 4
+console.log(solution([1,2,2,3,3,5,6,8]));//returns 4
