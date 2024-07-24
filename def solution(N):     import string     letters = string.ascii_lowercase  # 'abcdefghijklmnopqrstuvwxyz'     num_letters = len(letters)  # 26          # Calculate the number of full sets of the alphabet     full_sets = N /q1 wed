@@ -1,0 +1,13 @@
+def solution(N):
+    import string
+    letters = string.ascii_lowercase  # 'abcdefghijklmnopqrstuvwxyz'
+    num_letters = len(letters)  # 26
+    
+    # Calculate the number of full sets of the alphabet
+    full_sets = N // num_letters
+    remainder = N % num_letters
+    
+    # Build the resulting string
+    result = letters * full_sets + letters[:remainder]
+    
+    return result
