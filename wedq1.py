@@ -14,20 +14,20 @@
 
 
 def solution(N):
-    import string
-    letters = string.ascii_lowercase  # 'abcdefghijklmnopqrstuvwxyz'
-    num_letters = len(letters)  # 26
+    # Alphabet string
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    len_alphabet = len(alphabet)
     
-    # Calculate the number of full sets of the alphabet
-    full_sets = N // num_letters
-    remainder = N % num_letters
+    # Full repetitions of the whole alphabet
+    full_repeats = N // len_alphabet
+    remainder = N % len_alphabet
     
-    # Build the resulting string
-    result = letters * full_sets + letters[:remainder]
+    # Build the result string
+    result = alphabet * full_repeats + alphabet[:remainder]
     
     return result
 
-# Examples:
-print(solution(3))   
-print(solution(5))
-print(solution(30))  
+# Test cases
+print(solution(3))  #  output: "abc"
+print(solution(5))  #  output: "abcde"
+print(solution(30)) #  output: "abcdefghijklmnopqrstuvwxyzabcd"
