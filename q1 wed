@@ -26,3 +26,8 @@ def solution(N):
     result = letters * full_sets + letters[:remainder]
     
     return result
+
+# Examples:
+print(solution(3))    # Output could be "abc"
+print(solution(5))    # Output could be "abcde"
+print(solution(30))   # Output could be "abcdefghijklmnopqrstuvwxyzabcd"
