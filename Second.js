@@ -20,3 +20,35 @@
 
 // N is an integer within the range [4..100];
 // string S is made only of digits (0−9).
+
+function solution(S) {
+    let maxSum = 0;
+    const n = S.length;
+
+    for (let i = 0; i < n - 3; i++) {
+        for (let j = i + 2; j < n - 1; j++) {
+            // Extract two-digit numbers
+            const num1 = parseInt(S.substring(i, i + 2));
+            const num2 = parseInt(S.substring(j, j + 2));
+
+            // Calculate the sum
+            const currentSum = num1 + num2;
+
+            // Update maxSum if the current sum is greater
+            if (currentSum > maxSum) {
+                maxSum = currentSum;
+            }
+        }
+    }
+
+    return maxSum;
+}
+
+// Test cases
+console.log(solution("43798")); // Should print 141
+console.log(solution("00101")); // Should print 10
+console.log(solution("0332331")); // Should print 66
+console.log(solution("00331")); // Should print 34
+console.log(solution("99999")); // Should print 198
+console.log(solution("121211")); // Should print 42
+
